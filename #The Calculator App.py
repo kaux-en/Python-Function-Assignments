@@ -18,11 +18,12 @@ def multiplication(x, y):
         if operation == "multiply":
             print(x * y)
 def division(x, y):
-        if y == 0:
+        try:
+                if operation == "divide":
+                        print(x / y)
+        except ZeroDivisionError:
+            if y == 0:
                 print("Cannot divide by 0")
-        else:
-            if operation == "divide":
-                print(x / y)
        
 
 

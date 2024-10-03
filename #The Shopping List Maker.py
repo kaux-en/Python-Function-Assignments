@@ -4,28 +4,37 @@
 #Task 2:Include a function to remove items from the list
 #Task 3:Add a function that prints out the entire list in a formatted way
 
-input("Press enter then add your items.").lower()
-input("When finished, type 'done'").lower()
-
-grocery_items = []
     
-    
-while True:
-    items = input()
-    if items == "done":
-        print("Your grocery list is complete!")
-        break
+def add(grocery_list, items):
+                grocery_list.append(items)
+                print(grocery_list)
+            
+        
+def remove(grocery_list, items):   
+            grocery_list.remove(items)
+            print(grocery_list)
+            
+def print_list(grocery_list):
+        for item in grocery_list:
+            print(item)
+      
+            
+items = input("Enter your items: ").lower()    
+action = input("Are you adding or removing an item? (add/remove) " ).lower()
+ask = input("Would you like to continue? (yes/no): ")
+grocery_list = []
 
-    if items == "remove":
-        input("Enter item you want to remove:" )
-        remove_item = input()
-        print(grocery_items.remove(remove_item))
+while ask == "yes":
+    if action == "add":          
+        add(grocery_list, items)
+    elif action == "remove":
+        remove(grocery_list, items)
+    items = input("Enter your items: ").lower()    
+    action = input("Are you adding or removing an item? (add/remove) " ).lower()
+    ask = input("Would you like to continue? (yes/no): ")
 
-    if items != "done":
-        grocery_items.append(items) 
-    print(grocery_items, sep='-')
 
- 
+print_list(grocery_list)
         
         
 
